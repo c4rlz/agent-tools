@@ -1,6 +1,6 @@
 {
-  "name": "protect-main",
-  "description": "A Claude Code plugin that blocks git pushes to main.",
+  "name": "agent-tools",
+  "description": "Guardrails and tools for coding agents, packaged as Claude Code plugins.",
   "owner": {
     "name": "Carly Ewasiuk",
     "url": "https://github.com/c4rlz"

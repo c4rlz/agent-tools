@@ -5,9 +5,9 @@ import { mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { check, splitCommands } from "../plugins/protect-main/scripts/protect-main.mjs";
+import { check, splitCommands } from "../scripts/protect-main.mjs";
 
-const script = fileURLToPath(new URL("../plugins/protect-main/scripts/protect-main.mjs", import.meta.url));
+const script = fileURLToPath(new URL("../scripts/protect-main.mjs", import.meta.url));
 
 // A repo stub: current branch and push destination, no real git needed.
 const on = (branch, push = null) => () => (args) => {

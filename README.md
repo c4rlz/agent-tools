@@ -1,64 +1,42 @@
-# protect-main
+# agent-tools
 
-A [Claude Code](https://claude.com/claude-code) plugin that stops Claude from pushing to `main`.
-
-When Claude runs a `git push` that would update `main` or `master`, the push is blocked before it runs and Claude is told to push a feature branch and open a pull request instead. Your own `git push` in a terminal is unaffected.
+Guardrails and tools for coding agents. Each tool is a [Claude Code](https://claude.com/claude-code) plugin you can install on its own.
 
 ## Install
 
-In Claude Code:
+Add the marketplace once, then install the tools you want:
 
 ```
-/plugin marketplace add c4rlz/protect-main
-/plugin install protect-main@protect-main
+/plugin marketplace add c4rlz/agent-tools
+/plugin install protect-main@agent-tools
 ```
 
-Or from your shell:
+From your shell, use `claude plugin marketplace add` and `claude plugin install` with the same arguments.
 
-```sh
-claude plugin marketplace add c4rlz/protect-main
-claude plugin install protect-main@protect-main
-```
+## Tools
 
-Needs Node 18 or later on your `PATH`.
+| Tool | What it does | Install |
+| --- | --- | --- |
+| [protect-main](plugins/protect-main) | Blocks `git push` to `main` or `master`, so the agent pushes a branch and opens a pull request instead. | `/plugin install protect-main@agent-tools` |
 
-## What it blocks
+Tools are written for Claude Code today. Each one keeps its logic in a plain script with its own tests, so it can be adapted for other agents.
 
-| Command | Result |
-| --- | --- |
-| `git push origin main`, `git push -u origin main`, `git push --force origin main` | Blocked |
-| `git push origin feature:main`, `git push origin HEAD:refs/heads/main` | Blocked |
-| `git push origin --delete main` | Blocked |
-| `git push` or `git push origin` while on `main`, or on a branch whose push target is `main` | Blocked |
-| `git push --all`, `git push --mirror` | Blocked |
-| `git push origin feature`, `git push -u origin HEAD` on a feature branch | Allowed |
-| `git push --tags`, `git push origin v1.0.0` | Allowed |
+## Add a tool
 
-It also looks inside compound commands (`npm test && git push origin main`), `cd` and `git -C` directory changes, and `bash -c "..."`.
-
-## Protect other branches
-
-Set `PROTECT_MAIN_BRANCHES` to a comma-separated list before starting Claude Code. It replaces the default `main,master`:
-
-```sh
-export PROTECT_MAIN_BRANCHES="main,production,release"
-```
-
-To set it for Claude Code only, add it to the `env` block of `~/.claude/settings.json`.
-
-## Limits
-
-This is a guardrail against mistakes, not a security boundary. It reads the command Claude is about to run, so it can't see pushes hidden behind a git alias, a script file or a Makefile target. To make `main` truly protected, also turn on branch protection on your git host, such as a [GitHub branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+1. Create `plugins/<name>/` with a `.claude-plugin/plugin.json` manifest, the tool's components (such as `hooks/hooks.json` and `scripts/`), a `README.md` and a `test/` folder.
+2. Add an entry for it to [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json) and a row to the table above.
+3. Run `npm test` and `claude plugin validate .`.
 
 ## Development
 
+Needs Node 18 or later.
+
 ```sh
-npm test                                  # unit and end-to-end tests
-claude plugin validate .                  # check the marketplace and plugin manifests
-claude --plugin-dir ./plugins/protect-main  # try it in a session without installing
+npm test                       # every tool's tests
+claude plugin validate .       # the marketplace and each plugin manifest
 ```
 
-The hook is a single dependency-free script: [`plugins/protect-main/scripts/protect-main.mjs`](plugins/protect-main/scripts/protect-main.mjs).
+CI runs the tests on every push and pull request.
 
 ## License
 

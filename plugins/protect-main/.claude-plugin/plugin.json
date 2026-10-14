@@ -6,8 +6,13 @@
     "name": "Carly Ewasiuk",
     "url": "https://github.com/c4rlz"
   },
-  "homepage": "https://github.com/c4rlz/protect-main",
-  "repository": "https://github.com/c4rlz/protect-main",
+  "homepage": "https://github.com/c4rlz/agent-tools/tree/main/plugins/protect-main",
+  "repository": "https://github.com/c4rlz/agent-tools",
   "license": "MIT",
-  "keywords": ["git", "safety", "hooks", "branch-protection"]
+  "keywords": [
+    "git",
+    "safety",
+    "hooks",
+    "branch-protection"
+  ]
 }
