@@ -1,0 +1,13 @@
+{
+  "name": "protect-main",
+  "description": "Stops Claude Code from running git push to main or master, so changes go through a branch and a pull request.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Carly Ewasiuk",
+    "url": "https://github.com/c4rlz"
+  },
+  "homepage": "https://github.com/c4rlz/protect-main",
+  "repository": "https://github.com/c4rlz/protect-main",
+  "license": "MIT",
+  "keywords": ["git", "safety", "hooks", "branch-protection"]
+}

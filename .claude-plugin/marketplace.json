@@ -1,0 +1,15 @@
+{
+  "name": "protect-main",
+  "description": "A Claude Code plugin that blocks git pushes to main.",
+  "owner": {
+    "name": "Carly Ewasiuk",
+    "url": "https://github.com/c4rlz"
+  },
+  "plugins": [
+    {
+      "name": "protect-main",
+      "source": "./plugins/protect-main",
+      "description": "Stops Claude Code from running git push to main or master, so changes go through a branch and a pull request."
+    }
+  ]
+}
