@@ -5,7 +5,7 @@
   "description": "Guardrails and tools for coding agents, packaged as Claude Code plugins.",
   "type": "module",
   "scripts": {
-    "test": "node --test plugins/*/test/",
+    "test": "node --test plugins/*/test/*.test.mjs",
     "validate": "claude plugin validate ."
   },
   "engines": {
