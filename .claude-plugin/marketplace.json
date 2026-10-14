@@ -20,6 +20,11 @@
       "name": "protect-destructive",
       "source": "./plugins/protect-destructive",
       "description": "Stops Claude Code from running commands that throw away work for good, like git reset --hard, git clean -f, force-pushes and rm -rf outside the project."
+    },
+    {
+      "name": "coding-standards",
+      "source": "./plugins/coding-standards",
+      "description": "Language-agnostic coding best practices Claude follows while writing code, plus /coding-standards:review to check a change against them."
     }
   ]
 }
