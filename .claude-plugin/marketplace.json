@@ -10,6 +10,11 @@
       "name": "protect-main",
       "source": "./plugins/protect-main",
       "description": "Stops Claude Code from running git push to main or master, so changes go through a branch and a pull request."
+    },
+    {
+      "name": "protect-env",
+      "source": "./plugins/protect-env",
+      "description": "Stops Claude Code from reading or changing .env files, which usually hold secrets. Templates like .env.example stay readable."
     }
   ]
 }
