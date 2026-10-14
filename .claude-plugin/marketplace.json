@@ -15,6 +15,11 @@
       "name": "protect-env",
       "source": "./plugins/protect-env",
       "description": "Stops Claude Code from reading or changing .env files, which usually hold secrets. Templates like .env.example stay readable."
+    },
+    {
+      "name": "protect-destructive",
+      "source": "./plugins/protect-destructive",
+      "description": "Stops Claude Code from running commands that throw away work for good, like git reset --hard, git clean -f, force-pushes and rm -rf outside the project."
     }
   ]
 }

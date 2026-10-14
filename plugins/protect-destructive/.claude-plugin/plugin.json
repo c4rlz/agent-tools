@@ -1,0 +1,13 @@
+{
+  "name": "protect-destructive",
+  "description": "Stops Claude Code from running commands that throw away work for good, like git reset --hard, git clean -f, force-pushes and rm -rf outside the project.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Carly Ewasiuk",
+    "url": "https://github.com/c4rlz"
+  },
+  "homepage": "https://github.com/c4rlz/agent-tools/tree/main/plugins/protect-destructive",
+  "repository": "https://github.com/c4rlz/agent-tools",
+  "license": "MIT",
+  "keywords": ["git", "safety", "hooks", "rm"]
+}
