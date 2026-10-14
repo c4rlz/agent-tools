@@ -18,6 +18,7 @@ From your shell, use `claude plugin marketplace add` and `claude plugin install`
 | Tool | What it does | Install |
 | --- | --- | --- |
 | [protect-main](plugins/protect-main) | Blocks `git push` to `main` or `master`, so the agent pushes a branch and opens a pull request instead. | `/plugin install protect-main@agent-tools` |
+| [protect-env](plugins/protect-env) | Blocks reading or changing `.env` files, which usually hold secrets. Templates like `.env.example` stay readable. | `/plugin install protect-env@agent-tools` |
 
 Tools are written for Claude Code today. Each one keeps its logic in a plain script with its own tests, so it can be adapted for other agents.
 
