@@ -1,0 +1,13 @@
+{
+  "name": "coding-standards",
+  "description": "Language-agnostic coding best practices Claude follows while writing code, plus /coding-standards:review to check a change against them.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Carly Ewasiuk",
+    "url": "https://github.com/c4rlz"
+  },
+  "homepage": "https://github.com/c4rlz/agent-tools/tree/main/plugins/coding-standards",
+  "repository": "https://github.com/c4rlz/agent-tools",
+  "license": "MIT",
+  "keywords": ["code-quality", "best-practices", "code-review", "skills"]
+}
