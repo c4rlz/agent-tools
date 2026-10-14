@@ -20,7 +20,7 @@ claude plugin marketplace add c4rlz/agent-tools
 claude plugin install protect-main@agent-tools
 ```
 
-Needs Node 18 or later on your `PATH`.
+Needs Node 22 or later on your `PATH`.
 
 ## What it blocks
 

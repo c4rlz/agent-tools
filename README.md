@@ -30,7 +30,7 @@ Tools are written for Claude Code today. Each one keeps its logic in a plain scr
 
 ## Development
 
-Needs Node 18 or later.
+Needs Node 22 or later.
 
 ```sh
 npm test                       # every tool's tests
